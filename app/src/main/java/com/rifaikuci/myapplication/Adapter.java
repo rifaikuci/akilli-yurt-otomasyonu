@@ -18,14 +18,16 @@ import java.util.List;
 
 public class Adapter extends PagerAdapter {
 
-    private List<Model>  models;
+    private List<ModelDuyurular> modelDuyurulars;
     private LayoutInflater layoutInflater;
     private Context context;
-    Button btnDetay;
+    ImageView duyuruResim;
+    TextView duyuruBaslik,duyuruDetay;
+    View view;
 
 
-    public Adapter(List<Model> models, Context context) {
-        this.models = models;
+    public Adapter(List<ModelDuyurular> modelDuyurulars, Context context) {
+        this.modelDuyurulars = modelDuyurulars;
         this.context = context;
     }
 
@@ -33,7 +35,7 @@ public class Adapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return models.size();
+        return modelDuyurulars.size();
     }
 
     @Override
@@ -45,25 +47,43 @@ public class Adapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.item,container,false);
 
-        ImageView imageView;
-        TextView title,desc;
+        view= layoutInflater.inflate(R.layout.item,container,false);
 
-        imageView = view.findViewById(R.id.image);
-        title  = view.findViewById(R.id.title);
-        desc = view.findViewById(R.id.desc);
+        variableDesc();
 
+        Picasso.get().load(modelDuyurulars.get(position).getDuyuruResim()).into(duyuruResim);
+        duyuruBaslik.setText(modelDuyurulars.get(position).getDuyuruBaslik());
+        duyuruDetay.setText(modelDuyurulars.get(position).getDuyuruDetay());
 
-        Picasso.get().load(models.get(position).getImage()).into(imageView);
-        title.setText(models.get(position).getTitle());
-        desc.setText(models.get(position).getDesc());
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
+                itemClick(position);
+                // finish();
+            }
+        });
 
         container.addView(view,0);
 
         return view;
+    }
+
+    //cardview tıklandığında gerçekleşecek işlemler
+    private void itemClick(int position) {
+
+        System.out.println(modelDuyurulars.get(position).getDuyuruBaslik());
+    }
+
+    private void variableDesc() {
+
+
+
+        duyuruResim = view.findViewById(R.id.image);
+        duyuruBaslik  = view.findViewById(R.id.title);
+        duyuruDetay = view.findViewById(R.id.desc);
+
     }
 
     @Override
