@@ -1,10 +1,10 @@
 package com.rifaikuci.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -60,8 +60,12 @@ public class Adapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
 
-                itemClick(position);
-                // finish();
+                Intent intent = new Intent(context, DuyurularDetay.class);
+                intent.putExtra("baslik", modelDuyurulars.get(position).getDuyuruBaslik());
+                intent.putExtra("detay", modelDuyurulars.get(position).getDuyuruDetay());
+                intent.putExtra("resim", modelDuyurulars.get(position).getDuyuruResim());
+                context.startActivity(intent);
+
             }
         });
 
@@ -70,11 +74,6 @@ public class Adapter extends PagerAdapter {
         return view;
     }
 
-    //cardview tıklandığında gerçekleşecek işlemler
-    private void itemClick(int position) {
-
-        System.out.println(modelDuyurulars.get(position).getDuyuruBaslik());
-    }
 
     private void variableDesc() {
 

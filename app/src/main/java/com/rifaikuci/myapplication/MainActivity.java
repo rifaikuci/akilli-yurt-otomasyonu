@@ -43,15 +43,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toggle.syncState();
 
-        if(savedInstanceState ==null){
+        if(savedInstanceState ==null) {
+            // başlangıç olarak gelecek olan fragment
+            // fragment açılış ekranı belirler
+            try{
 
-        // başlangıç olarak gelecek olan fragment
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container,
-                new DuyurularFragment()).commit();
-        navigationView.setCheckedItem(R.id.nav_duyurular);
-    }
+            if (getIntent().getStringExtra("tur").equalsIgnoreCase("duyurular")) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,
+                                new DuyurularFragment()).commit();
+                navigationView.setCheckedItem(R.id.nav_duyurular);
+            } }
+            catch (Exception e){
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,
+                                new DuyurularFragment()).commit();
+                navigationView.setCheckedItem(R.id.nav_duyurular);
+            }
+
+        }
     }
 
     private void variableDesc() {
