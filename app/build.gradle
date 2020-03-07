@@ -40,4 +40,17 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    repositories {
+
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "https://oss.sonatype.org/content/repositories/releases" }
+
+    }
+
+    dependencies {
+        implementation 'com.github.captain-miao:optroundcardview:1.0.0'
+    }
+
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
 }
