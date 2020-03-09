@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
-import com.rifaikuci.myapplication.fragment.ChatFragment;
+import com.rifaikuci.myapplication.fragment.DilekSikayetFragment;
 import com.rifaikuci.myapplication.fragment.DuyurularFragment;
 import com.rifaikuci.myapplication.fragment.ProfileFragment;
 
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_chat:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ChatFragment()).commit();
+                        new DilekSikayetFragment()).commit();
                 break;
 
             case R.id.nav_send:

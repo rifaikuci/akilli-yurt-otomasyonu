@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DilekSikayet">
+    tools:context=".fragment.DilekSikayetFragment">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="#f27281" />
+        android:src="#e8e8e8" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -24,29 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/linearBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:padding="15dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/back"
-                android:tint="#191919" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Geri"
-                android:textColor="#191919"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
     </LinearLayout>
 
 
@@ -122,7 +100,7 @@
 
 
                 <EditText
-                    android:id="@+id/eSifre"
+                    android:id="@+id/eOda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -147,7 +125,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="30dp"
                     android:background="@drawable/edit_background"
-                   android:drawableTint="#696969"
+                    android:drawableTint="#696969"
                     android:hint="Dilek ve Şikayetinizi Giriniz..."
                     android:inputType="textMultiLine"
                     android:maxLines="7"
@@ -157,8 +135,37 @@
                     android:textStyle="bold" />
 
 
+                <RadioGroup
+                    android:id="@+id/groupTur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:padding="8dp"
+                    android:background="@drawable/edit_background"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
+                    <RadioButton
+                        android:id="@+id/radioDilek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="15dp"
+                        android:text="Dilek"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
+                    <RadioButton
+                        android:id="@+id/radioSikayet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="15dp"
+                        android:text="Şikayet"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                </RadioGroup>
 
                 <Button
                     android:id="@+id/btnDevam"
