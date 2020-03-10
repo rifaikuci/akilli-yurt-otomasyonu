@@ -93,23 +93,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new DuyurularFragment()).commit();
                 break;
-
-            case R.id.nav_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
-                break;
-
-            case R.id.nav_chat:
+            case R.id.nav_istekler:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new DilekSikayetFragment()).commit();
                 break;
 
+            case R.id.nav_profile:
+                Toast.makeText(getApplicationContext(),"Yapım Aşamasında ",Toast.LENGTH_LONG).show();
+
+                break;
+
             case R.id.nav_send:
-                Toast.makeText(getApplicationContext(),"Gönder ",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Yapım Aşamasında ",Toast.LENGTH_LONG).show();
                 break;
 
             case R.id.nav_share:
-                Toast.makeText(getApplicationContext(),"Paylaş ",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Yapım Aşamasında ",Toast.LENGTH_LONG).show();
                 break;
         }
 

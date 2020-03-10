@@ -9,15 +9,70 @@ public class SikayetData {
     @Expose
     @SerializedName("adSoyad") private String adSoyad;
     @Expose
-    @SerializedName("mail") private String mail;
+    @SerializedName("odaNumara") private int odaNumara;
     @Expose
-    @SerializedName("turResim") private String turResim;
-    @Expose
-    @SerializedName("turEnlem") private Double turEnlem;
-    @Expose
-    @SerializedName("turBoylam") private Double turBoylam;
+    @SerializedName("istek") private String istek;
     @Expose
     @SerializedName("tur") private String tur;
     @Expose
-    @SerializedName("durum") private String durum;
+    @SerializedName("mail") private String mail;
+    @Expose
+    @SerializedName("success") private boolean success = false;
+
+    public boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public SikayetData(String adSoyad, int odaNumara, String istek, String tur, String mail) {
+        this.adSoyad = adSoyad;
+        this.odaNumara = odaNumara;
+        this.istek = istek;
+        this.tur = tur;
+        this.mail = mail;
+    }
+
+    public String getAdSoyad() {
+        return adSoyad;
+    }
+
+    public void setAdSoyad(String adSoyad) {
+        this.adSoyad = adSoyad;
+    }
+
+    public int getOdaNumara() {
+        return odaNumara;
+    }
+
+    public void setOdaNumara(int odaNumara) {
+        this.odaNumara = odaNumara;
+    }
+
+    public String getIstek() {
+        return istek;
+    }
+
+    public void setIstek(String istek) {
+        this.istek = istek;
+    }
+
+    public String getTur() {
+        return tur;
+    }
+
+    public void setTur(String tur) {
+        this.tur = tur;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 }
+
