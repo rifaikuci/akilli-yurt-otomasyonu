@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,7 +35,10 @@ public class DuyurularDetay extends AppCompatActivity {
             resim  = getIntent().getStringExtra("resim");
 
             txtBaslik.setText(baslik);
-            txtDetail.setText(detay);
+
+            // link verme
+            txtDetail.setText(Html.fromHtml(detay));
+            txtDetail.setMovementMethod(LinkMovementMethod.getInstance());
             Picasso.get().load(resim).into(image);
         }
         catch (Exception e){ }

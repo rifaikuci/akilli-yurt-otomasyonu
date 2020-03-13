@@ -80,8 +80,9 @@ public class DilekSikayetFragment extends Fragment {
                else if (odaNumara ==0)
                { eOda.setError("Oda Numarası Giriniz!!!");}
 
-               else if((550<odaNumara) || (odaNumara<100) )
-               { eOda.setError("Oda Numarası Hatalı girilmiştir!!!");}
+               else if ( odaNumara < 100 || odaNumara >563)
+               { eOda.setError(" Oda Numarası Hatalı girilmiştir!!!");}
+
 
                else if(istek.isEmpty())
                { eDetay.setError("isteklerinizi Giriniz!!!"); }
@@ -89,6 +90,7 @@ public class DilekSikayetFragment extends Fragment {
                else if (tur.isEmpty()){ Toast.makeText(rootview.getContext(), "Türü giriniz!!!", Toast.LENGTH_SHORT).show(); }
 
                else {
+
                    progressDialog.show();
 
                    apiInterface  = ApiClient.getApiClient().create(ApiInterface.class);

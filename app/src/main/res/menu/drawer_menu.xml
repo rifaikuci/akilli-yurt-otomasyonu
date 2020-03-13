@@ -20,20 +20,6 @@
             />
     </group>
 
-    <item android:title="Personeller">
-        <menu>
-    <item
-        android:id="@+id/nav_share"
-        android:icon="@drawable/ic_share"
-        android:title="Kat Görevlileri"
-        />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_send"
-                android:title=""
-                />
-        </menu>
-    </item>
 
 
 </menu>

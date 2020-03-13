@@ -103,13 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
 
-            case R.id.nav_send:
-                Toast.makeText(getApplicationContext(),"Yapım Aşamasında ",Toast.LENGTH_LONG).show();
-                break;
 
-            case R.id.nav_share:
-                Toast.makeText(getApplicationContext(),"Yapım Aşamasında ",Toast.LENGTH_LONG).show();
-                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);

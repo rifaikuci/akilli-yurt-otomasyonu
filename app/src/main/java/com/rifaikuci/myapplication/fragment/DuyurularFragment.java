@@ -3,6 +3,7 @@ package com.rifaikuci.myapplication.fragment;
 import android.animation.ArgbEvaluator;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
