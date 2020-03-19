@@ -10,14 +10,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 
-public class DuyurularDetay extends AppCompatActivity {
+public class DuyurularDetay extends YouTubeBaseActivity {
 
     ImageView imageBack,image;
     TextView txtDetail,txtBaslik;
     Intent intent;
-    String baslik,detay,resim;
+    String baslik,detay,resim,video;
+
+    private YouTubePlayerView youTubePlayerView;
+    private YouTubePlayer.OnInitializedListener onInitializedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +36,35 @@ public class DuyurularDetay extends AppCompatActivity {
         txtDetail.setText("İnternet Olmayabilir !!!");
         image.setImageResource(R.drawable.custom_background);
 
+
+
         try {
             baslik = getIntent().getStringExtra("baslik");
             detay  = getIntent().getStringExtra("detay");
             resim  = getIntent().getStringExtra("resim");
+            video  = getIntent().getStringExtra("video");
+
+            if(video.isEmpty()){
+                youTubePlayerView.setVisibility(View.INVISIBLE);
+            }else
+            {
+                youTubePlayerView.setVisibility(View.VISIBLE);
+                onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+
+                    @Override
+                    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                        youTubePlayer.loadVideo(video);
+                    }
+
+                    @Override
+                    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+                            youTubePlayerView.setVisibility(View.INVISIBLE);
+                    }
+
+                };
+
+                youTubePlayerView.initialize("AIzaSyAWjdszBt7aVAYMT8XX_pOuk5TQLLEjPS4",onInitializedListener);
+            }
 
             txtBaslik.setText(baslik);
 
@@ -67,5 +99,8 @@ public class DuyurularDetay extends AppCompatActivity {
 
     txtDetail = (TextView) findViewById(R.id.txtDetail);
     txtBaslik = (TextView) findViewById(R.id.txtBaslik);
+
+    youTubePlayerView =findViewById(R.id.youtubeview);
+
     }
 }

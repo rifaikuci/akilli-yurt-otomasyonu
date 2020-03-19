@@ -8,6 +8,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Application;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -17,6 +21,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.rifaikuci.myapplication.fragment.DilekSikayetFragment;
 import com.rifaikuci.myapplication.fragment.DuyurularFragment;
 import com.rifaikuci.myapplication.fragment.ProfileFragment;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -100,6 +106,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_profile:
                 Toast.makeText(getApplicationContext(),"Yapım Aşamasında ",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.nav_share:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,
+                        "Hey check out my app at: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
 
                 break;
 

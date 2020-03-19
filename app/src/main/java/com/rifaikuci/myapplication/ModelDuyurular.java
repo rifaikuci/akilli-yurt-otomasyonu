@@ -6,11 +6,24 @@ public class ModelDuyurular {
     private String duyuruDetay;
     private String duyuruResim;
 
-    public ModelDuyurular(String duyuruBaslik, String duyuruDetay, String duyuruResim) {
+    public String getDuyuruVideo() {
+        return duyuruVideo;
+    }
+
+    public void setDuyuruVideo(String duyuruVideo) {
+        this.duyuruVideo = duyuruVideo;
+    }
+
+    private String duyuruVideo;
+
+    public ModelDuyurular(String duyuruBaslik, String duyuruDetay, String duyuruResim, String duyuruVideo) {
         this.duyuruBaslik = duyuruBaslik;
         this.duyuruDetay = duyuruDetay;
         this.duyuruResim = duyuruResim;
+        this.duyuruVideo = duyuruVideo;
     }
+
+
 
     public String getDuyuruBaslik() {
         return duyuruBaslik;

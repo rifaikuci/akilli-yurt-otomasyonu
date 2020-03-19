@@ -41,7 +41,10 @@ public class DuyurularFragment extends Fragment {
     SwipeRefreshLayout swipe;
 
     List<ModelDuyurular> modelDuyurulars,gosterilecek;
-    String duyuruBaslik,duyuruDetay,duyuruResim;
+    String duyuruBaslik,duyuruDetay,duyuruResim,duyuruVideo;
+
+
+
 
     @Nullable
     @Override
@@ -106,14 +109,15 @@ public class DuyurularFragment extends Fragment {
         if( response.isSuccessful() && response.body() !=null){
 
             gosterilecek = (ArrayList<ModelDuyurular>) response.body();
-
             for (int i =0;i<gosterilecek.size();i++){
 
                 duyuruBaslik =gosterilecek.get(i).getDuyuruBaslik();
                 duyuruDetay =gosterilecek.get(i).getDuyuruDetay();
                 duyuruResim =gosterilecek.get(i).getDuyuruResim();
+                duyuruVideo = gosterilecek.get(i).getDuyuruVideo();
+                System.out.println(i+ "."+ gosterilecek.get(i).getDuyuruVideo());
 
-                modelDuyurulars.add(new ModelDuyurular(duyuruBaslik,duyuruDetay,duyuruResim));
+                modelDuyurulars.add(new ModelDuyurular(duyuruBaslik,duyuruDetay,duyuruResim,duyuruVideo));
             }
 
             adapter = new Adapter(modelDuyurulars,rootview.getContext());

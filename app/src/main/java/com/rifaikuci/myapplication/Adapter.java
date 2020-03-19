@@ -65,6 +65,7 @@ public class Adapter extends PagerAdapter {
                 intent.putExtra("baslik", modelDuyurulars.get(position).getDuyuruBaslik());
                 intent.putExtra("detay", modelDuyurulars.get(position).getDuyuruDetay());
                 intent.putExtra("resim", modelDuyurulars.get(position).getDuyuruResim());
+                intent.putExtra("video", modelDuyurulars.get(position).getDuyuruVideo());
                 context.startActivity(intent);
 
             }
