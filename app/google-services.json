@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "920393652323",
+    "firebase_url": "https://duyurunotification.firebaseio.com",
+    "project_id": "duyurunotification",
+    "storage_bucket": "duyurunotification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920393652323:android:602a0a184ff6fbae040056",
+        "android_client_info": {
+          "package_name": "com.rifaikuci.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920393652323-obat2ven33oflhmbgfn9iofddmd21i57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy-3DGHnoyp6YZkO7PvCcyQnp91ZqkfSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920393652323-obat2ven33oflhmbgfn9iofddmd21i57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

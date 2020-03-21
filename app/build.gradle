@@ -47,4 +47,12 @@ dependencies {
     }
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+
+    implementation 'com.android.volley:volley:1.1.0'
+
 }
+
+apply  plugin: 'com.google.gms.google-services'
