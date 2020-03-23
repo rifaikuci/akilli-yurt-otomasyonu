@@ -62,10 +62,10 @@ public class Adapter extends PagerAdapter {
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, DuyurularDetay.class);
-                intent.putExtra("baslik", modelDuyurulars.get(position).getDuyuruBaslik());
-                intent.putExtra("detay", modelDuyurulars.get(position).getDuyuruDetay());
-                intent.putExtra("resim", modelDuyurulars.get(position).getDuyuruResim());
-                intent.putExtra("video", modelDuyurulars.get(position).getDuyuruVideo());
+                intent.putExtra("duyuruBaslik", modelDuyurulars.get(position).getDuyuruBaslik());
+                intent.putExtra("duyuruDetay", modelDuyurulars.get(position).getDuyuruDetay());
+                intent.putExtra("duyuruResim", modelDuyurulars.get(position).getDuyuruResim());
+                intent.putExtra("duyuruVideo", modelDuyurulars.get(position).getDuyuruVideo());
                 context.startActivity(intent);
 
             }

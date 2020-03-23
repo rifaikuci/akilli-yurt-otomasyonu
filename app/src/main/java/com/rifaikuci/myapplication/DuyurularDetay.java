@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,19 +38,18 @@ public class DuyurularDetay extends YouTubeBaseActivity {
         image.setImageResource(R.drawable.custom_background);
 
 
-
         try {
-            baslik = getIntent().getStringExtra("baslik");
-            detay  = getIntent().getStringExtra("detay");
-            resim  = getIntent().getStringExtra("resim");
-            video  = getIntent().getStringExtra("video");
+            baslik = getIntent().getStringExtra("duyuruBaslik");
+            detay  = getIntent().getStringExtra("duyuruDetay");
+            resim  = getIntent().getStringExtra("duyuruResim");
+            video  = getIntent().getStringExtra("duyuruVideo");
 
             if(video.isEmpty()){
                 youTubePlayerView.setVisibility(View.INVISIBLE);
             }else
             {
                 youTubePlayerView.setVisibility(View.VISIBLE);
-                onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+                        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
 
                     @Override
                     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
